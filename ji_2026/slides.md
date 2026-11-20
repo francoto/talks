@@ -7,6 +7,9 @@ transition: slide-left
 mdc: true
 layout: cover
 class: lapp-cover
+aspectRatio: 16/9
+favicon: './binaries/favicon.ico'
+keywords: fair,software-quality,metadata,research,software,cnrs,in2p3,lapp,
 ---
 
 <div class="cover-shell">
@@ -32,10 +35,7 @@ class: lapp-cover
     <img class="logo-oscars" src="./binaries/logos/oscars.svg" alt="OSCARS" />
     <img class="logo-eu" src="./binaries/logos/eu-funded.svg" alt="Financé par l'Union européenne" />
     <img class="logo-cnrs" src="./binaries/logos/logo_cnrs_blanc.png" alt="CNRS" />
-    <div class="logo-usmb-placeholder" title="Ajouter ici le logo USMB">
-      <span>USMB</span>
-      <small>LOGO À AJOUTER</small>
-    </div>
+    <img class="logo-usmb" src="./binaries/logos/logo_usmb_blanc_web_grand_rvb.png" alt="USMB"/>
   </div>
 </div>
 
@@ -43,7 +43,7 @@ class: lapp-cover
 .lapp-cover {
   background:
     radial-gradient(circle at 82% 68%, rgba(23, 187, 210, .13), transparent 28%),
-    #123b78;
+    #16354a;
 }
 
 .lapp-cover::before {
@@ -225,38 +225,20 @@ class: lapp-cover
 </style>
 
 ---
-
-# Comment améliorer la qualité logicielle dans une communauté ?
-
-Tom François · LAPP – Laboratoire d’Annecy de Physique des Particules
-
-<!--
-Durée totale : 30 min = 25 min de présentation + 5 min de questions.
-Répartition (25 min) : Intro 2,5 · Qualité 2,5 · EVERSE 3 · Codemetasoft 4 · Transition 1 · OSSR 4 · CLLAPP 5 · Synthèse et perspectives 3.
-Environ 1 min 15 par slide.
--->
-
+layout: image
+image: ./binaries/schemas/intro_schema.svg
+backgroundSize: 50em 90%
 ---
 
-# Qui suis-je ?
+# Introduction
 
-Ingénieur logiciel au LAPP, impliqué dans plusieurs projets autour du **logiciel de recherche** :
+<!-- 
+Dans cette présentation je vais parler de qualité logicielle.
+Après une définition rapide, on va parler d'outils qui ont été développés dans les projets EVERSE et Codemetasoft.
+Et comment s'en servir de briques pour d'autres projets.
 
-<v-clicks>
-
-- **EVERSE** : qualité du logiciel de recherche (projet européen)
-- **Codemetasoft** : qualité des métadonnées des logiciels
-- **ESCAPE OSSR** : catalogue de logiciels en astro et physique des particules
-- **CLLAPP** : catalogue de logiciels du LAPP (nouveau projet)
-
-</v-clicks>
-
-> 🖼️ **Schéma** : « logiciel de recherche » au centre, les 4 projets autour. Regrouper EVERSE + Codemetasoft (« outils ») et OSSR + CLLAPP (« applications »). Il servira aussi de plan de la présentation.
-
-<!--
-Le point commun entre ces projets : le logiciel de recherche.
-Ce schéma reviendra en fil rouge (version allégée) au début de chaque partie.
 -->
+
 
 ---
 
@@ -279,6 +261,10 @@ Plan : qualité logicielle → outils (EVERSE, Codemetasoft) → applications (O
 
 </div>
 
+
+<div
+
+</div>
 <!--
 On annonce les leviers maintenant, on y reviendra en conclusion.
 Sur les slides suivantes, un petit badge rappelle le levier illustré.
@@ -286,17 +272,72 @@ Sur les slides suivantes, un petit badge rappelle le levier illustré.
 
 ---
 
-# La qualité logicielle : un concept multidimensionnel
 
-- **FAIR4RS** : Findable, Accessible, Interoperable, Reusable
-  → faciliter le partage et la réutilisation du code
-- Mais aussi : performances (moins abordées), maintenabilité, tests…
+### C'est quoi un logiciel de recherche ?
 
-> 🖼️ **Schéma** : grille ou radar des dimensions de la qualité. FAIR4RS en couleur, les autres dimensions en gris clair.
+spectre plus ou moins inclusif:
+- tendance à voir uniquement le code intégré dans le processus de la découverte scientifique
+- on peut aussi considérer tout code qui a été utilisé/produit ou lié au processus de recherche dans un plusieurs étapes de cycle de vie de la recherche. 
+	- code pour interfacer des détecteurs ou des logiciels qui sont sortis de l'exclusivité du monde de la recherche.
 
-<!--
-Rappel court : une bonne partie de la salle connaît déjà. Ne pas définir chaque lettre.
--->
+> Aleksandra Nenadic, Daniel Garijo, Laura Portell-Silva, Shoaib Sufi, "_What is Research Software?_". everse.software. [http://everse.software/RSQKit/research_software](http://everse.software/RSQKit/research_software) (accessed 20 November 2026).
+
+<v-click>
+
+### Différents tiers
+
+- Analysis code : scripts d'analyse, jupyter notebook, support de publication
+- Prototype tools : utilisation plus grande qu'une unique publication. Ex: agnpy, Compas Toolkit, ...
+- Research Software infrastructure : gammapy, jupyter notebooks, scikit-learn, ...
+
+> Aleksandra Nenadic, Daniel Garijo, Fotis Psomopoulos, Shoaib Sufi, "Three-Tier Model of Research Software". everse.software. http://everse.software/RSQKit/three_tier_view (accessed 20 November 2026). 
+
+</v-click>
+
+---
+
+### La qualité logicielle : un concept multidimensionnel
+
+<div class="grid grid-cols-2 gap-5 mt-3">
+
+<table class="w-full text-[10px] leading-[1.22] border-separate border-spacing-y-0.5">
+  <thead>
+    <tr class="text-left">
+      <th class="w-[31%] px-2 py-1.5 text-[11px] bg-slate-100 rounded-l-lg">Dimension</th>
+      <th class="px-2 py-1.5 text-[10px] bg-slate-100 rounded-r-lg">Description synthétique</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td class="px-2 py-1 font-semibold text-[12px] align-top">Community</td><td class="px-2 py-1">Santé des relations entre contributeurs, utilisateurs et parties prenantes.</td></tr>
+    <tr><td class="px-2 py-1 font-semibold text-[12px] align-top">Compatibility</td><td class="px-2 py-1">Coexistence avec d’autres produits et échange ou réutilisation d’informations.</td></tr>
+    <tr><td class="px-2 py-1 font-semibold text-[12px] align-top">FAIRness</td><td class="px-2 py-1">Adhésion aux principes Findable, Accessible, Interoperable et Reusable.</td></tr>
+    <tr><td class="px-2 py-1 font-semibold text-[12px] align-top">Flexibility</td><td class="px-2 py-1">Adaptation à de nouveaux besoins, environnements ou charges de travail.</td></tr>
+    <tr><td class="px-2 py-1 font-semibold text-[12px] align-top">Functional Suitability</td><td class="px-2 py-1">Fonctions complètes, exactes et adaptées aux tâches visées.</td></tr>
+    <tr><td class="px-2 py-1 font-semibold text-[12px] align-top">Interaction Capability</td><td class="px-2 py-1">Interface facile à apprendre, à utiliser, inclusive et prévenant les erreurs.</td></tr>
+    <tr><td class="px-2 py-1 font-semibold text-[12px] align-top">Maintainability</td><td class="px-2 py-1">Modifications efficaces grâce à la modularité, les tests et la réutilisabilité.</td></tr>
+  </tbody>
+</table>
+
+<table class="w-full text-[10px] leading-[1.22] border-separate border-spacing-y-0.5">
+  <thead>
+    <tr class="text-left">
+      <th class="w-[31%] px-2 py-1.5 text-[11px] bg-slate-100 rounded-l-lg">Dimension</th>
+      <th class="px-2 py-1.5 text-[10px] bg-slate-100 rounded-r-lg">Description synthétique</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td class="px-2 py-1 font-semibold text-[12px] align-top">Open Source Software</td><td class="px-2 py-1">Code accessible pour inspection, modification, vérification et contribution.</td></tr>
+    <tr><td class="px-2 py-1 font-semibold text-[12px] align-top">Performance Efficiency</td><td class="px-2 py-1">Délais, débits et charge respectés avec une utilisation efficace des ressources.</td></tr>
+    <tr><td class="px-2 py-1 font-semibold text-[12px] align-top">Reliability</td><td class="px-2 py-1">Fonctionnement prévu, disponibilité, tolérance aux fautes et reprise après panne.</td></tr>
+    <tr><td class="px-2 py-1 font-semibold text-[12px] align-top">Safety</td><td class="px-2 py-1">Prévention des situations dangereuses pour les personnes, les biens ou l’environnement.</td></tr>
+    <tr><td class="px-2 py-1 font-semibold text-[12px] align-top">Security</td><td class="px-2 py-1">Protection contre les attaques et contrôle des données : accès, intégrité et authenticité.</td></tr>
+    <tr><td class="px-2 py-1 font-semibold text-[12px] align-top">Sustainability</td><td class="px-2 py-1">Disponibilité durable sur de nouvelles plateformes et pour de nouveaux besoins.</td></tr>
+  </tbody>
+</table>
+
+</div>
+
+<div class="mt-2 text-xs opacity-60">Source : EVERSE, « Research Software Quality and Project Health Dimensions ».</div>
 
 ---
 
