@@ -41,49 +41,39 @@ Et comment s'en servir de briques pour d'autres projets.
 -->
 
 
----
-
-# Notre question, et 4 leviers
-
-**Comment améliorer la qualité logicielle dans une communauté ?**
-
-<v-clicks>
-
-1. **Fixer des exigences partagées**
-2. **Automatiser** et réduire la friction
-3. Donner de la **visibilité** et une incitation
-4. **Mesurer** et suivre dans le temps
-
-</v-clicks>
 
 ---
 layout: section
 ---
 
-# Les outils
+# Outils
 
 
 ---
 
-# EVERSE
+## EVERSE
 
 Projet européen qui construit et combine des **outils et ressources** pour la qualité du logiciel de recherche.
 
-
-
----
-
+<v-click>
 
 ### C'est quoi un logiciel de recherche ?
 
-spectre plus ou moins inclusif:
-- tendance à voir uniquement le code intégré dans le processus de la découverte scientifique
-- on peut aussi considérer tout code qui a été utilisé/produit ou lié au processus de recherche dans un plusieurs étapes de cycle de vie de la recherche. 
-	- code pour interfacer des détecteurs ou des logiciels qui sont sortis de l'exclusivité du monde de la recherche.
+
+- **exclusif** : code associé au papier de recherche
+- **inclusif** tout ce qui a été utile pour réaliser les expériences.
 
 > Aleksandra Nenadic, Daniel Garijo, Laura Portell-Silva, Shoaib Sufi, "_What is Research Software?_". everse.software. [http://everse.software/RSQKit/research_software](http://everse.software/RSQKit/research_software) (accessed 20 November 2026).
+</v-click>
 
-<v-click>
+<!-- spectre plus ou moins large 
+- limité au logiciel qui a produit les résultats scientifiques (cité dans le papier associé)
+- ouvert au code qui interface les outils utilisées pour réaliser l'expérience (détecteur, ...) logiciels qui sont sortis du cadre unique de la recherche scientifique ...
+
+-->
+
+
+---
 
 ### Différents tiers
 
@@ -93,7 +83,6 @@ spectre plus ou moins inclusif:
 
 > Aleksandra Nenadic, Daniel Garijo, Fotis Psomopoulos, Shoaib Sufi, "Three-Tier Model of Research Software". everse.software. http://everse.software/RSQKit/three_tier_view (accessed 20 November 2026). 
 
-</v-click>
 
 ---
 layout: two-cols
@@ -126,58 +115,191 @@ layout: two-cols
 
 ---
 
-# Par où commencer dans une communauté ?
+# Indicateur de qualité
 
-Trois critères pour choisir un point d’entrée :
+proxy de la dimension de qualité associée
 
-<Card tag="concept" title="Title">Body text.</Card>
-
-<v-clicks>
-
-- **Mesurable automatiquement** : pas de relecture manuelle à grande échelle
-- **Utile à tous** : lisible par les services de découverte (catalogues, dépôts, moteurs de recherche)
-- **Peu coûteux** pour les auteurs de logiciels
-
-</v-clicks>
-
-<v-click>
-
-Notion d'indicateur (proxy d'un aspect appartenant à une dimension)
 
 https://everse.software/indicators/website/indicators.html
 
-</v-click>
+---
+layout: two-cols
+---
+
+::title::
+
+## Les briques d’EVERSE
+
+::left::
+
+### resqui
+
+CLI Python pour analyser un repo à partir de son url
+
+https://github.com/EVERSE-ResearchSoftware/QualityPipelines
+
+
+::right::
+
+ ### DashVerse 
+ dashboard de présentation des analyses produites par resqui 
+ 
+https://www.dashverse.cloud/
 
 
 ---
-layout: grid
-cols: 2
+layout: two-cols
 ---
 
-# Les briques d’EVERSE
+::title::
 
-- **RSQKit** : ressources pédagogiques https://everse.software/RSQKit/
+# Codemetasoft
 
-- **TechRadar** : catalogue d’outils, catégorisés par dimension de la qualité - https://everse.software/TechRadar/
-- **resqui** : paquet Python qui évalue un logiciel en combinant de nombreux plugins existants - https://github.com/EVERSE-ResearchSoftware/QualityPipelines
-- **dashverse** : dashboard de présentation des analyses produites par resqui - https://www.dashverse.cloud/
+## Métadonnées
 
+::left::
 
----
+```json
+{
+    "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+    "@type": "SoftwareSourceCode",
+    "license": "https://spdx.org/licenses/MIT",
+    "codeRepository": "git+https://gitlab.in2p3.fr/gammalearn/gammalearn.git",
+    "contIntegration": "https://gitlab.in2p3.fr/gammalearn/gammalearn/-/pipelines",
+    "dateCreated": "2017-07-01",
+    "datePublished": "2026-09-15",
+    "dateModified": "2026-09-15",
+    "downloadUrl": "https://gitlab.in2p3.fr/gammalearn/gammalearn/-/archive/v0.16.0/gammalearn-v0.16.0.tar.gz",
+    "issueTracker": "https://gitlab.in2p3.fr/gammalearn/gammalearn/-/issues",
+    "name": "GammaLearn",
+    "version": "v0.16.0",
+    "softwareVersion": "v0.16.0",
+    "readme": "https://gitlab.in2p3.fr/gammalearn/gammalearn/-/raw/master/README.md",
+    "maintainer": {
+        "@type": "Person",
+        "@id": "https://orcid.org/0000-0002-5686-2078",
+        "givenName": "Thomas",
+        "familyName": "Vuillaume",
+        "email": "thomas.vuillaume@lapp.in2p3.fr",
+        "affiliation": {
+            "@type": "Organization",
+            "name": "Univ. Savoie Mont-Blanc, CNRS, LAPP"
+        }
+    },
+    "description": "GammaLearn is a collaborative project to apply deep learning to the analysis of low-level Imaging Atmospheric Cherenkov Telescopes such as CTA.\nIt provides a framework to easily train and apply models from a configuration file.\nLearn more at https://purl.org/gammalearn ",
+    "applicationCategory": "astroparticle, iact, cta",
+    "releaseNotes": "Gammalearn v0.16.0 reconstructs (src_x, src_y) instead of (alt, az). It also fixes crashes on invalid reconstructed directions, a prod6 data bug, and slow HDF5 reads in FileLSTDataset, and removes dead code.",
+    "funding": "824064",
+    "developmentStatus": "active",
+    "funder": {
+        "@type": "Organization",
+        "name": "European Union’s Horizon 2020 research and innovation programme"
+    },
+    "keywords": [
+        "deep learning",
+        "machine learning",
+        "Gamma-ray telescopes",
+        "cta"
+    ],
+    "programmingLanguage": [
+        "Python 3"
+    ],
+    "relatedLink": [
+        "https://purl.org/gammalearn"
+    ],
+    "author": [
+        {
+            "@type": "Person",
+            "@id": "https://orcid.org/ 0000-0002-4012-6930",
+            "givenName": "Mikael",
+            "familyName": "Jacquemont",
+            "email": "mikael.jacquemont@lapp.in2p3.fr",
+            "affiliation": {
+                "@type": "Organization",
+                "name": "Univ. Savoie Mont-Blanc, CNRS, LAPP"
+            }
+        },
+        {
+            "@type": "Person",
+            "@id": "https://orcid.org/0000-0002-5686-2078",
+            "givenName": "Thomas",
+            "familyName": "Vuillaume",
+            "email": "thomas.vuillaume@lapp.in2p3.fr",
+            "affiliation": {
+                "@type": "Organization",
+                "name": "Univ. Savoie Mont-Blanc, CNRS, LAPP"
+            }
+        },
+        {
+            "@type": "Person",
+            "@id": "https://orcid.org/0000-0002-5221-0240",
+            "givenName": "Michaël",
+            "familyName": "Dell'aiera",
+            "email": "michael.dellaiera@lapp.in2p3.fr",
+            "affiliation": {
+                "@type": "Organization",
+                "name": "Univ. Savoie Mont-Blanc, CNRS, LAPP"
+            }
+        }
+    ],
+    "contributor": [
+        {
+            "@type": "Person",
+            "@id": "https://orcid.org/0000-0003-1536-9241",
+            "givenName": "Thomas",
+            "familyName": "Trivellato",
+            "email": "thomas.trivellato@lapp.in2p3.fr",
+            "affiliation": {
+                "@type": "Organization",
+                "name": "Univ. Savoie Mont-Blanc, CNRS, LAPP"
+            }
+        },
+        {
+            "@type": "Person",
+            "@id": "https://orcid.org/0000-0001-5226-3089",
+            "givenName": "Tom",
+            "familyName": "François",
+            "email": "tom.francois@lapp.in2p3.fr",
+            "affiliation": {
+                "@type": "Organization",
+                "name": "Univ. Savoie Mont-Blanc, CNRS, LAPP"
+            }
+        },
+        {
+            "@type": "Person",
+            "@id": "",
+            "givenName": "Vincent",
+            "familyName": "Pollet",
+            "email": "vincent.pollet@lapp.in2p3.fr",
+            "affiliation": {
+                "@type": "Organization",
+                "name": "Univ. Savoie Mont-Blanc, CNRS, LAPP"
+            }
+        },
+        {
+            "@type": "Person",
+            "@id": "https://orcid.org/0000-0001-9582-451X",
+            "givenName": "Justine",
+            "familyName": "Talpaert",
+            "email": "justine.talpaert@lapp.in2p3.fr",
+            "affiliation": {
+                "@type": "Organization",
+                "name": "Univ. Savoie Mont-Blanc, CNRS, LAPP"
+            }
+        }
+    ]
+}
+```
 
-# Les métadonnées : petites, mais décisives
+::right::
 
 Elles décrivent le logiciel : **licence, langage, date de modification, mots-clés**…
-
-<v-clicks>
 
 - Souvent **oubliées**, ou **non maintenues**
 - Pourtant c’est **le premier élément lu** par les services
 - → **FAIR** : Findable, Accessible, Interoperable, Reusable
 
-</v-clicks>
 
-> 🖼️ **Schéma** : à gauche un extrait de `codemeta.json`, à droite des flèches vers les « lecteurs » (catalogues, dépôts, moteurs de recherche).
 
 <!--
 Site du projet : https://softwareunderstanding.github.io/CodeMetaSoft_website/website/
@@ -195,38 +317,50 @@ Des outils pour **faciliter l’usage des métadonnées et automatiser leur main
 
 > 🖼️ **Schéma** : cycle **Créer → Analyser → Signaler (issue) → Corriger → Créer…**, avec le nom de l’outil sur chaque flèche.
 
-<div class="abs-br m-6 text-sm opacity-60">Levier ② Automatiser</div>
-
 ---
 
 # rsmetacheck-bot en pratique
 
 > 🖼️ **Capture d’écran** : une issue ouverte automatiquement sur un dépôt réel, avec les points détectés (pitfalls et warnings). Annoter 1 ou 2 éléments.
 
-<div class="abs-br m-6 text-sm opacity-60">Levier ② Automatiser · ④ Mesurer</div>
-
 <!--
 Exemple concret : l’auteur n’a rien à lancer, l’information arrive là où il travaille déjà.
 -->
 
 ---
+layout: two-cols
+---
 
-# Des briques aux applications
+::title::
 
-On réutilise l’existant, comme le préconise EVERSE :
+# Comment améliorer la qualité logicielle dans une communauté ?
 
-| Brique | OSSR | CLLAPP |
-|---|---|---|
-| autocodemeta | ? | ✅ génération du codemeta |
-| rsmetacheck / bot | pas encore utilisé | pas encore utilisé |
-| resqui | 🔜 curation + suivi | 🚧 quality pipeline |
-| dashboard (dashverse) | 🔜 qualité du catalogue | ? |
+4 piliers
 
-<div class="mt-6 text-sm opacity-70">✅ en place · 🚧 en cours · 🔜 prévu</div>
+::left::
 
-<!--
-Les « ? » sont à compléter. Les icônes ou logos des outils seront repris sur les slides OSSR et CLLAPP.
--->
+<v-clicks>
+
+1. **Fixer des exigences partagées**
+   - définir des critères requis minimum (indicateurs)
+2. **Automatiser** et réduire la friction
+   - analyse en continu / régulièrement
+3. Donner de la **visibilité** et une incitation
+   - partager l'analyse avec les mainteneurs
+   - donner des pistes de points à améliorer (depuis existant)
+   - donner des exemples de bons élèves 
+4. **Mesurer** et suivre dans le temps
+
+</v-clicks>
+
+:: right ::
+
+- configuration / liste d'indicateurs
+- autocodemeta
+- resqui
+- dashverse
+
+
 
 ---
 layout: section
@@ -239,23 +373,27 @@ layout: section
 
 **Open Source Software Repository** : catalogue de dépôts dédié aux communautés d’astro et de physique des particules, hébergé sur Zenodo.
 
+<v-clicks>
+
 - But : regrouper les logiciels d’un même domaine, **avec des exigences de qualité**
 - https://escape-ossr.gitlab.io/ossr-pages/
 - Communauté Zenodo : https://zenodo.org/communities/escape2020
 
+</v-clicks>
+
 > 🖼️ **Capture d’écran** : page d’accueil du catalogue OSSR et liste des enregistrements de la communauté Zenodo.
 
-<div class="abs-br m-6 text-sm opacity-60">Levier ① Exigences partagées</div>
 
 ---
 
 # OSSR : le fonctionnement actuel
 
-La curation analyse le dépôt Zenodo et vérifie les critères requis. Le résultat est reporté dans une **merge request** dédiée, **validée manuellement** par le board ESCAPE.
+- critères d'entrées → système de curation → ajout dans le catalogue
+
 
 > 🖼️ **Schéma** : flux horizontal **Dépôt Zenodo → Analyse des critères → Merge request de curation → Validation manuelle (board ESCAPE) → Entrée dans le catalogue**. Mettre en évidence l’étape manuelle.
 
-<div class="abs-br m-6 text-sm opacity-60">Levier ① Exigences partagées</div>
+levier 1 et 3
 
 ---
 
@@ -290,21 +428,29 @@ Les limites justifient les prochaines étapes : c’est l’articulation à fair
 
 ---
 
-# CLLAPP : le catalogue de logiciels du LAPP
+# CLLAPP : le Catalogue de Logiciels du LAPP
 
-Projet très récent : voici les premières étapes.
+<!-- Projet très récent -->
+
+### Motivations
 
 <v-clicks>
 
-- Les logiciels du laboratoire ne sont pas forcément mis en avant lors des évaluations : ils apparaissent surtout s’ils sont associés à des publications
-- Les projets informatiques sont mal connus au sein du laboratoire → **favoriser la collaboration**
-- Mettre en place des **outils de qualité logicielle** sur ces dépôts
+- **Comptabilité** : logiciels pas évalués directement dans les productions du laboratoire.
+- **Collaboration** : connaissance des autres logiciels développés et maintenus
+- **Qualité** : Améliorer la qualité des différents
 
 </v-clicks>
 
-> 🖼️ **Illustration** (facultative) : trois icônes, une par motivation (évaluation, collaboration, qualité).
+<v-click>
 
-<div class="abs-br m-6 text-sm opacity-60">Levier ③ Visibilité</div>
+### Création
+
+point d'entrée : codemeta.json
+
+visibilité interne
+
+</v-click>
 
 ---
 layout: image-right
@@ -334,40 +480,27 @@ backgroundSize: 50em 90%
 
 ---
 
-# Retour sur la question : 4 leviers
+# Conclusion
 
-| Levier | Outils | Applications |
-|---|---|---|
-| ① Exigences partagées | TechRadar, resqui | OSSR (curation) |
-| ② Automatiser | autocodemeta, rsmetacheck-bot | CLLAPP (génération des codemeta) |
-| ③ Visibilité | dashverse | CLLAPP (catalogue), OSSR |
-| ④ Mesurer | resqui, rsmetacheck | OSSR (prévu), CLLAPP (en cours) : suivi dans la durée |
-
-<!--
-Reprendre les 4 leviers de l’intro : la question du titre trouve sa réponse ici.
--->
-
----
+  > schéma des outils utilisés dasn catalogue OSSR et CLAPP
 
 # Perspectives
 
-- **Catalogue de domaine** : généraliser le modèle OSSR à d’autres communautés
 - **Catalogue de laboratoire** : étendre CLLAPP à l’**IN2P3**, pour renforcer la collaboration et la réutilisation d’outils entre laboratoires
-- Qui veut tester ou contribuer ?
-
-> 🖼️ **Schéma** : du LAPP vers plusieurs laboratoires IN2P3 reliés autour d’un catalogue commun.
 
 ---
-layout: center
+layout: end
 class: text-center
 ---
 
 # Questions ?
 
-Tom François · LAPP
 
-EVERSE : https://everse.software/ · Codemetasoft : https://softwareunderstanding.github.io/CodeMetaSoft_website/website/ · OSSR : https://escape-ossr.gitlab.io/ossr-pages/
+- EVERSE : https://everse.software/
+- Codemetasoft : https://w3id.org/codemetasoft/
+- OSSR : https://escape-ossr.gitlab.io/ossr-pages/
 
+Tom François tom.francois@lapp.in2p3.fr
 <!--
 5 min prévues pour les questions.
 -->
