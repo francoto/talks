@@ -3,7 +3,7 @@ theme: pixel
 title: "Comment améliorer la qualité logicielle dans une communauté ?"
 subtitle: "Journées Informatique IN2P3/IRFU 2026"
 author: "Tom François"
-date: 25-11-2026
+date: 25/11/2026
 transition: slide-left
 email: tom.francois@lapp.in2p3.fr
 mdc: true
@@ -17,12 +17,12 @@ themeConfig:
 
 logos:
   - /binaries/logos/logo_lapp_50ans.png
+  - /binaries/logos/eu.svg
   - /binaries/logos/EOSCEverse_PosColour_full.svg
-  - /binaries/logos/codemetasoft_logo.png
-  - /binaries/logos/eu-funded.svg
   - /binaries/logos/oscars.svg
-  - /binaries/logos/logo_cnrs_blanc.png
-  - /binaries/logos/logo_usmb_blanc_web_grand_rvb.png
+  - /binaries/logos/codemetasoft_logo.png
+  - /binaries/logos/logo_cnrs_bleu.png
+  - /binaries/logos/logo_usmb_web_grand_rvb.png
 ---
 
 ---
@@ -51,11 +51,21 @@ layout: section
 
 ---
 
-## EVERSE
+## EVERSE - RSQKit
 
-Projet européen qui construit et combine des **outils et ressources** pour la qualité du logiciel de recherche.
+Projet européen qui construit et combine des **outils et ressources** pour le logiciel de recherche.
 
 <v-click>
+
+![](/binaries/illustrations/screenshot_rsqkit.png){width=500px lazy}
+
+https://everse.software/RSQKit/
+
+</v-click>
+
+
+
+---
 
 ### C'est quoi un logiciel de recherche ?
 
@@ -64,7 +74,8 @@ Projet européen qui construit et combine des **outils et ressources** pour la q
 - **inclusif** tout ce qui a été utile pour réaliser les expériences.
 
 > Aleksandra Nenadic, Daniel Garijo, Laura Portell-Silva, Shoaib Sufi, "_What is Research Software?_". everse.software. [http://everse.software/RSQKit/research_software](http://everse.software/RSQKit/research_software) (accessed 20 November 2026).
-</v-click>
+
+
 
 <!-- spectre plus ou moins large 
 - limité au logiciel qui a produit les résultats scientifiques (cité dans le papier associé)
@@ -77,9 +88,12 @@ Projet européen qui construit et combine des **outils et ressources** pour la q
 
 ### Différents tiers
 
-- Analysis code : scripts d'analyse, jupyter notebook, support de publication
-- Prototype tools : utilisation plus grande qu'une unique publication. Ex: agnpy, Compas Toolkit, ...
-- Research Software infrastructure : gammapy, jupyter notebooks, scikit-learn, ...
+- **Analysis code** : scripts d'analyse, jupyter notebook, support de publication
+- **Prototype tools** : utilisation plus grande qu'une unique publication. Ex: agnpy, Compas Toolkit, ...
+- **Research Software Infrastructure** : gammapy, jupyter notebooks, scikit-learn, ...
+
+
+![](/binaries/illustrations/screenshot_three_tiers.png){width=500px lazy}
 
 > Aleksandra Nenadic, Daniel Garijo, Fotis Psomopoulos, Shoaib Sufi, "Three-Tier Model of Research Software". everse.software. http://everse.software/RSQKit/three_tier_view (accessed 20 November 2026). 
 
@@ -114,10 +128,14 @@ layout: two-cols
 | Sustainability | Disponibilité durable sur de nouvelles plateformes et pour de nouveaux besoins. |
 
 ---
+layout: image
+image: ./binaries/schemas/schéma_techradar_dimension.svg
+backgroundSize: 50em 90%
+---
 
-# Indicateur de qualité
+### Techradar
 
-proxy de la dimension de qualité associée
+
 
 
 https://everse.software/indicators/website/indicators.html
@@ -145,6 +163,8 @@ https://github.com/EVERSE-ResearchSoftware/QualityPipelines
  dashboard de présentation des analyses produites par resqui 
  
 https://www.dashverse.cloud/
+
+![](/binaries/schemas/dashverse.png){width=500px lazy}
 
 
 ---
