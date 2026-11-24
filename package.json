@@ -16,6 +16,7 @@
     "@slidev/cli": "^53.1.0",
     "@slidev/theme-default": "^0.25.0",
     "playwright-chromium": "^1.65.1",
+    "slidev-theme-pixel": "^2.0.2",
     "yaml": "^2.9.1"
   }
 }
