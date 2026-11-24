@@ -14,6 +14,9 @@ importers:
       '@slidev/theme-default':
         specifier: ^0.25.0
         version: 0.25.0
+      playwright-chromium:
+        specifier: ^1.65.1
+        version: 1.65.1
       yaml:
         specifier: ^2.9.1
         version: 2.9.1
@@ -5804,10 +5807,8 @@ snapshots:
   playwright-chromium@1.65.1:
     dependencies:
       playwright-core: 1.65.1
-    optional: true
 
-  playwright-core@1.65.1:
-    optional: true
+  playwright-core@1.65.1: {}
 
   points-on-curve@0.2.0: {}
 
