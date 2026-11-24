@@ -1,2 +1,2 @@
-onlyBuiltDependencies:
-  - playwright-chromium
+allowBuilds:
+  playwright-chromium: true
