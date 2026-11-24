@@ -582,8 +582,6 @@ class: text-center
 - Codemetasoft : https://w3id.org/codemetasoft/
 - OSSR : https://escape-ossr.gitlab.io/ossr-pages/
 
-Tom François tom.francois@lapp.in2p3.fr
-
 
 > ## ressources
 > 
@@ -591,6 +589,7 @@ Tom François tom.francois@lapp.in2p3.fr
 > 
 > schémas créés à la main avec Excalidraw
 
+Tom François tom.francois@lapp.in2p3.fr
 <!--
 5 min prévues pour les questions.
 -->
