@@ -17,7 +17,6 @@ themeConfig:
 
 logos:
   - /binaries/logos/logo_lapp_50ans.png
-  - /binaries/logos/eu.svg
   - /binaries/logos/EOSCEverse_PosColour_full.svg
   - /binaries/logos/oscars.svg
   - /binaries/logos/codemetasoft_logo.png
@@ -46,7 +45,7 @@ Et comment s'en servir de briques pour d'autres projets.
 layout: section
 ---
 
-# Outils
+# Outils / EVERSE
 
 
 ---
@@ -106,6 +105,7 @@ layout: two-cols
 ## La qualité logicielle : un concept multidimensionnel
 
 ::left::
+<Transform :scale="0.7" origin="top center">
 
 | Dimension | Description |
 |---|---|
@@ -117,7 +117,12 @@ layout: two-cols
 | Interaction Capability | Interface facile à apprendre, à utiliser, inclusive et prévenant les erreurs. |
 | Maintainability | Modifications efficaces grâce à la modularité, les tests et la réutilisabilité. |
 
+</Transform>
+
 ::right::
+
+<Transform :scale="0.7" origin="top center">
+
 | Dimension | Description |
 |---|---|
 | Open Source Software | Code accessible pour inspection, modification, vérification et contribution. |
@@ -127,10 +132,13 @@ layout: two-cols
 | Security | Protection contre les attaques et contrôle des données : accès, intégrité et authenticité. |
 | Sustainability | Disponibilité durable sur de nouvelles plateformes et pour de nouveaux besoins. |
 
+</Transform>
+
 ---
 layout: image
 image: ./binaries/schemas/schéma_techradar_dimension.svg
 backgroundSize: 50em 90%
+references: "https://everse.software/TechRadar/"
 ---
 
 ### Techradar
@@ -138,7 +146,7 @@ backgroundSize: 50em 90%
 
 
 
-https://everse.software/indicators/website/indicators.html
+
 
 ---
 layout: two-cols
@@ -154,17 +162,30 @@ layout: two-cols
 
 CLI Python pour analyser un repo à partir de son url
 
+![](/binaries/schemas/resqui.png){width=500px lazy}
+
 https://github.com/EVERSE-ResearchSoftware/QualityPipelines
 
 
 ::right::
 
+<v-click>
+
  ### DashVerse 
- dashboard de présentation des analyses produites par resqui 
+ dashboard des analyses produites par resqui 
  
-https://www.dashverse.cloud/
 
 ![](/binaries/schemas/dashverse.png){width=500px lazy}
+
+https://www.dashverse.cloud/
+
+</v-click>
+
+---
+layout: section
+---
+
+# Outils / Codemetasoft
 
 
 ---
@@ -178,6 +199,16 @@ layout: two-cols
 ## Métadonnées
 
 ::left::
+
+
+Elles décrivent le logiciel : **licence, langage, date de modification, mots-clés**…
+
+- Souvent **oubliées**, ou **non maintenues**
+- Pourtant c’est **le premier élément lu** par les services
+- → **FAIR** : Findable, Accessible, Interoperable, Reusable
+
+::right::
+
 
 ```json
 {
@@ -311,37 +342,32 @@ layout: two-cols
 }
 ```
 
-::right::
-
-Elles décrivent le logiciel : **licence, langage, date de modification, mots-clés**…
-
-- Souvent **oubliées**, ou **non maintenues**
-- Pourtant c’est **le premier élément lu** par les services
-- → **FAIR** : Findable, Accessible, Interoperable, Reusable
-
-
 
 <!--
 Site du projet : https://softwareunderstanding.github.io/CodeMetaSoft_website/website/
 -->
 
 ---
+references: "https://w3id.org/codemetasoft/"
+---
 
 # Codemetasoft : créer, analyser, maintenir
 
+
+![](/binaries/logos/codemetasoft_logo.png){width=200px lazy}
+
 Des outils pour **faciliter l’usage des métadonnées et automatiser leur maintien** :
 
-- **autocodemeta** : assistant de création de `codemeta.json`
-- **rsmetacheck** : analyse des métadonnées
-- **rsmetacheck-bot** : lance l’analyse et la soumet sous forme d’issues sur la forge
+- **autocodemeta** : génération d'un `codemeta.json` à partir de l'url du repo
+- **rsmetacheck** : analyse des métadonnées d'un repo
+- **rsmetacheck-bot** : création d'issues à partir de *rsmetacheck*
 
-> 🖼️ **Schéma** : cycle **Créer → Analyser → Signaler (issue) → Corriger → Créer…**, avec le nom de l’outil sur chaque flèche.
 
 ---
 
 # rsmetacheck-bot en pratique
 
-> 🖼️ **Capture d’écran** : une issue ouverte automatiquement sur un dépôt réel, avec les points détectés (pitfalls et warnings). Annoter 1 ou 2 éléments.
+![](/binaries/illustrations/issue_rsmetacheck_bot.png){width=500px lazy}
 
 <!--
 Exemple concret : l’auteur n’a rien à lancer, l’information arrive là où il travaille déjà.
@@ -386,34 +412,29 @@ layout: two-cols
 layout: section
 ---
 
-# Applications
+# Applications / ESCAPE OSSR
+---
+references: "Communauté Zenodo :https://zenodo.org/communities/escape2020"
 ---
 
 # ESCAPE OSSR : un catalogue pour une communauté
 
 **Open Source Software Repository** : catalogue de dépôts dédié aux communautés d’astro et de physique des particules, hébergé sur Zenodo.
 
-<v-clicks>
 
 - But : regrouper les logiciels d’un même domaine, **avec des exigences de qualité**
-- https://escape-ossr.gitlab.io/ossr-pages/
-- Communauté Zenodo : https://zenodo.org/communities/escape2020
 
-</v-clicks>
 
-> 🖼️ **Capture d’écran** : page d’accueil du catalogue OSSR et liste des enregistrements de la communauté Zenodo.
+![](/binaries/illustrations/screenshot_ossr_zenodo.png){width=500px lazy}
 
 
 ---
 
 # OSSR : le fonctionnement actuel
 
-- critères d'entrées → système de curation → ajout dans le catalogue
+![](/binaries/schemas/ossr_curation.png){width=500px lazy}
 
 
-> 🖼️ **Schéma** : flux horizontal **Dépôt Zenodo → Analyse des critères → Merge request de curation → Validation manuelle (board ESCAPE) → Entrée dans le catalogue**. Mettre en évidence l’étape manuelle.
-
-levier 1 et 3
 
 ---
 
@@ -438,13 +459,18 @@ levier 1 et 3
 </div>
 </div>
 
-> 🖼️ **Schéma** : même flux que la slide précédente, avec en couleur différente (pointillés) les ajouts prévus : resqui dans l’analyse, dashboard en sortie. Légende existant / prévu.
-
-<div class="abs-br m-6 text-sm opacity-60">Levier ④ Mesurer · ③ Visibilité</div>
+![](/binaries/schemas/ossr_analyse.png)
 
 <!--
 Les limites justifient les prochaines étapes : c’est l’articulation à faire entendre.
 -->
+
+
+---
+layout: section
+---
+
+# Applications / CLAPP
 
 ---
 
@@ -458,7 +484,7 @@ Les limites justifient les prochaines étapes : c’est l’articulation à fair
 
 - **Comptabilité** : logiciels pas évalués directement dans les productions du laboratoire.
 - **Collaboration** : connaissance des autres logiciels développés et maintenus
-- **Qualité** : Améliorer la qualité des différents logiciels
+- **Qualité** : Faciliter la qualité logicielle (ressources + outils)
 
 </v-clicks>
 
@@ -466,9 +492,15 @@ Les limites justifient les prochaines étapes : c’est l’articulation à fair
 
 ### Création
 
-- point d'entrée : url du repo public *OU* codemeta.json
+Pour créer rapidement une liste de logiciels : 
 
-- Catalogue avec une visibilité interne
+- <pixelarticons-warning-box /> participation des développeurs / mainteneurs
+
+
+- <pixelarticons-download /> point d'entrée : url du repo public *OU* codemeta.json
+
+
+- <pixelarticons-visible /> Catalogue avec une visibilité interne seulement
 
 </v-click>
 
@@ -482,6 +514,7 @@ backgroundSize: 70%
 
 
 1. le `codemeta.json` est **généré** à partir de l’url
+
 2. il est **ajouté à la base de données**
 3. il apparaît dans le **catalogue**
 
@@ -497,14 +530,19 @@ backgroundSize: 50em 90%
 # CLLAPP
 
 
+---
+layout: image
+image: ./binaries/schemas/intro_schema.svg
+backgroundSize: 50em 90%
+---
+
+
+## Conclusion
 
 ---
 
-# Conclusion
 
-  > schéma des outils utilisés dans catalogue OSSR et CLAPP
-
-# Perspectives
+## Perspectives
 
 - **Catalogue de laboratoire** : étendre CLLAPP à l’**IN2P3**, pour renforcer la collaboration et la mutualisation d’outils entre laboratoires
 
@@ -523,6 +561,14 @@ class: text-center
 - OSSR : https://escape-ossr.gitlab.io/ossr-pages/
 
 Tom François tom.francois@lapp.in2p3.fr
+
+
+> ## ressources
+> 
+> présentation réalisée avec Slidev (thème pixel)
+> 
+> schémas créés à la main avec Excalidraw
+
 <!--
 5 min prévues pour les questions.
 -->
