@@ -438,7 +438,7 @@ Les limites justifient les prochaines étapes : c’est l’articulation à fair
 
 - **Comptabilité** : logiciels pas évalués directement dans les productions du laboratoire.
 - **Collaboration** : connaissance des autres logiciels développés et maintenus
-- **Qualité** : Améliorer la qualité des différents
+- **Qualité** : Améliorer la qualité des différents logiciels
 
 </v-clicks>
 
@@ -446,9 +446,9 @@ Les limites justifient les prochaines étapes : c’est l’articulation à fair
 
 ### Création
 
-point d'entrée : codemeta.json
+- point d'entrée : url du repo public *OU* codemeta.json
 
-visibilité interne
+- Catalogue avec une visibilité interne
 
 </v-click>
 
@@ -482,11 +482,13 @@ backgroundSize: 50em 90%
 
 # Conclusion
 
-  > schéma des outils utilisés dasn catalogue OSSR et CLAPP
+  > schéma des outils utilisés dans catalogue OSSR et CLAPP
 
 # Perspectives
 
-- **Catalogue de laboratoire** : étendre CLLAPP à l’**IN2P3**, pour renforcer la collaboration et la réutilisation d’outils entre laboratoires
+- **Catalogue de laboratoire** : étendre CLLAPP à l’**IN2P3**, pour renforcer la collaboration et la mutualisation d’outils entre laboratoires
+
+- combinaison avec un catalogue des compétences IN2P3 ?
 
 ---
 layout: end
