@@ -52,7 +52,9 @@ layout: section
 
 ## EVERSE - RSQKit
 
+![](/binaries/logos/EOSCEverse_PosColour_full.svg){width=200px lazy}
 Projet européen qui construit et combine des **outils et ressources** pour le logiciel de recherche.
+
 
 <v-click>
 
@@ -65,14 +67,19 @@ https://everse.software/RSQKit/
 
 
 ---
+references: "http://everse.software/RSQKit/research_software"
+---
 
 ### C'est quoi un logiciel de recherche ?
 
 
-- **exclusif** : code associé au papier de recherche
-- **inclusif** tout ce qui a été utile pour réaliser les expériences.
+définition avec une portée variable :
+- **exclusif** : code associé au papier de recherche uniquement 
+- **inclusif** : tout ce qui a été utile pour réaliser les expériences
+  - code qui interface le détecteur
+  - gestion de l'analyse, ...
+  - ...
 
-> Aleksandra Nenadic, Daniel Garijo, Laura Portell-Silva, Shoaib Sufi, "_What is Research Software?_". everse.software. [http://everse.software/RSQKit/research_software](http://everse.software/RSQKit/research_software) (accessed 20 November 2026).
 
 
 
@@ -201,14 +208,21 @@ layout: two-cols
 ::left::
 
 
-Elles décrivent le logiciel : **licence, langage, date de modification, mots-clés**…
+Elles décrivent le logiciel : **licence, langage, date de modification, mots-clés, dépendances, ...**…
 
 - Souvent **oubliées**, ou **non maintenues**
-- Pourtant c’est **le premier élément lu** par les services
+- Pourtant c’est **le premier élément lu** par les services 
 - → **FAIR** : Findable, Accessible, Interoperable, Reusable
 
+- format standard `codemeta.json`
+<!-- 
+
+codemeta.json utilisé nativement par Software Heritage pour générer une citation.
+
+-->
 ::right::
 
+`codemeta.json`
 
 ```json
 {
@@ -504,21 +518,14 @@ Pour créer rapidement une liste de logiciels :
 
 </v-click>
 
----
-layout: image-right
-image: /binaries/schemas/schéma_etat_courant_cllapp.png
-backgroundSize: 70%
+
 ---
 
 # CLLAPP : ce qui existe aujourd’hui (POC)
 
+![](/binaries/schemas/schéma_etat_courant_cllapp.png){width=100% lazy}
 
-1. le `codemeta.json` est **généré** à partir de l’url
-
-2. il est **ajouté à la base de données**
-3. il apparaît dans le **catalogue**
-
-
+python (FastAPI) + SQLite
 
 
 ---
@@ -544,9 +551,24 @@ backgroundSize: 50em 90%
 
 ## Perspectives
 
-- **Catalogue de laboratoire** : étendre CLLAPP à l’**IN2P3**, pour renforcer la collaboration et la mutualisation d’outils entre laboratoires
+- <pixelarticons-cloud-server /> Passer à une structure pérenne
 
-- combinaison avec un catalogue des compétences IN2P3 ?
+- <pixelarticons-globe /> Étendre CLLAPP à l’**IN2P3**, pour renforcer la collaboration et la mutualisation d’outils entre laboratoires
+
+- <pixelarticons-wall-sharp /> Combinaison avec un catalogue des compétences IN2P3 ?
+
+- <pixelarticons-map /> Piste de cartographie des logiciels/services pour les questions de sécurité ?
+
+<v-click>
+
+## Questions pour vous
+
+- Alternative existante dans d'autres labos ?
+- Où héberger ce service ? 
+  - labo hôte (ici LAPP)
+  - CC-IN2P3 
+
+</v-click>
 
 ---
 layout: end
