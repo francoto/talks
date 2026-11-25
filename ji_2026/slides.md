@@ -16,12 +16,12 @@ themeConfig:
   primary: '#16354a'
 
 logos:
-  - /binaries/logos/logo_lapp_50ans.png
-  - /binaries/logos/EOSCEverse_PosColour_full.svg
-  - /binaries/logos/oscars.svg
-  - /binaries/logos/codemetasoft_logo.png
-  - /binaries/logos/logo_cnrs_bleu.png
-  - /binaries/logos/logo_usmb_web_grand_rvb.png
+  - ./binaries/logos/logo_lapp_50ans.png
+  - ./binaries/logos/EOSCEverse_PosColour_full.svg
+  - ./binaries/logos/oscars.svg
+  - ./binaries/logos/codemetasoft_logo.png
+  - ./binaries/logos/logo_cnrs_bleu.png
+  - ./binaries/logos/logo_usmb_web_grand_rvb.png
 ---
 
 ---
@@ -52,13 +52,13 @@ layout: section
 
 ## EVERSE - RSQKit
 
-![](/binaries/logos/EOSCEverse_PosColour_full.svg){width=200px lazy}
+![](./binaries/logos/EOSCEverse_PosColour_full.svg){width=200px lazy}
 Projet européen qui construit et combine des **outils et ressources** pour le logiciel de recherche.
 
 
 <v-click>
 
-![](/binaries/illustrations/screenshot_rsqkit.png){width=500px lazy}
+![](./binaries/illustrations/screenshot_rsqkit.png){width=500px lazy}
 
 https://everse.software/RSQKit/
 
@@ -99,7 +99,7 @@ définition avec une portée variable :
 - **Research Software Infrastructure** : gammapy, jupyter notebooks, scikit-learn, ...
 
 
-![](/binaries/illustrations/screenshot_three_tiers.png){width=500px lazy}
+![](./binaries/illustrations/screenshot_three_tiers.png){width=500px lazy}
 
 > Aleksandra Nenadic, Daniel Garijo, Fotis Psomopoulos, Shoaib Sufi, "Three-Tier Model of Research Software". everse.software. http://everse.software/RSQKit/three_tier_view (accessed 20 November 2026). 
 
@@ -169,7 +169,7 @@ layout: two-cols
 
 CLI Python pour analyser un repo à partir de son url
 
-![](/binaries/schemas/resqui.png){width=500px lazy}
+![](./binaries/schemas/resqui.png){width=500px lazy}
 
 https://github.com/EVERSE-ResearchSoftware/QualityPipelines
 
@@ -182,7 +182,7 @@ https://github.com/EVERSE-ResearchSoftware/QualityPipelines
  dashboard des analyses produites par resqui 
  
 
-![](/binaries/schemas/dashverse.png){width=500px lazy}
+![](./binaries/schemas/dashverse.png){width=500px lazy}
 
 https://www.dashverse.cloud/
 
@@ -368,7 +368,7 @@ references: "https://w3id.org/codemetasoft/"
 # Codemetasoft : créer, analyser, maintenir
 
 
-![](/binaries/logos/codemetasoft_logo.png){width=200px lazy}
+![](./binaries/logos/codemetasoft_logo.png){width=200px lazy}
 
 Des outils pour **faciliter l’usage des métadonnées et automatiser leur maintien** :
 
@@ -381,7 +381,7 @@ Des outils pour **faciliter l’usage des métadonnées et automatiser leur main
 
 # rsmetacheck-bot en pratique
 
-![](/binaries/illustrations/issue_rsmetacheck_bot.png){width=500px lazy}
+![](./binaries/illustrations/issue_rsmetacheck_bot.png){width=500px lazy}
 
 <!--
 Exemple concret : l’auteur n’a rien à lancer, l’information arrive là où il travaille déjà.
@@ -413,7 +413,7 @@ layout: two-cols
 
 </v-clicks>
 
-:: right ::
+::right::
 
 - configuration / liste d'indicateurs
 - autocodemeta
@@ -439,14 +439,14 @@ references: "Communauté Zenodo :https://zenodo.org/communities/escape2020"
 - But : regrouper les logiciels d’un même domaine, **avec des exigences de qualité**
 
 
-![](/binaries/illustrations/screenshot_ossr_zenodo.png){width=500px lazy}
+![](./binaries/illustrations/screenshot_ossr_zenodo.png){width=500px lazy}
 
 
 ---
 
 # OSSR : le fonctionnement actuel
 
-![](/binaries/schemas/ossr_curation.png){width=500px lazy}
+![](./binaries/schemas/ossr_curation.png){width=500px lazy}
 
 
 
@@ -473,7 +473,7 @@ references: "Communauté Zenodo :https://zenodo.org/communities/escape2020"
 </div>
 </div>
 
-![](/binaries/schemas/ossr_analyse.png)
+![](./binaries/schemas/ossr_analyse.png)
 
 <!--
 Les limites justifient les prochaines étapes : c’est l’articulation à faire entendre.
@@ -523,14 +523,14 @@ Pour créer rapidement une liste de logiciels :
 
 # CLLAPP : ce qui existe aujourd’hui (POC)
 
-![](/binaries/schemas/schéma_etat_courant_cllapp.png){width=100% lazy}
+![](./binaries/schemas/schéma_etat_courant_cllapp.png){width=100% lazy}
 
 python (FastAPI) + SQLite
 
 
 ---
 layout: image
-image: /binaries/schemas/clapp_dev_schema.svg
+image: ./binaries/schemas/clapp_dev_schema.svg
 backgroundSize: 50em 90%
 ---
 

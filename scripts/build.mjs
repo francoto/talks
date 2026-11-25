@@ -1,5 +1,6 @@
 import { spawn } from 'node:child_process'
-import { mkdir, rm, writeFile } from 'node:fs/promises'
+import { existsSync } from 'node:fs'
+import { cp, mkdir, rm, writeFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import { BASE, DIST, ROOT, discoverTalks, slidevBin } from './lib.mjs'
 import { renderIndex } from './index-template.mjs'
@@ -33,6 +34,19 @@ const startedAt = Date.now()
 for (const talk of talks) {
   console.log(`\n▶ ${talk.name} — ${talk.title}`)
 
+  const output = join(DIST, talk.name)
+
+  for (const assetDirectory of ['public', 'binaries']) {
+    const source = join(talk.directory, assetDirectory)
+    if (!existsSync(source)) continue
+
+    const destination = assetDirectory === 'public'
+      ? output
+      : join(output, assetDirectory)
+
+    await cp(source, destination, { recursive: true })
+  }
+
   await run(slidevBin(), [
     'build',
     talk.slides,
@@ -41,7 +55,7 @@ for (const talk of talks) {
     '--router-mode',
     'hash',
     '--out',
-    join(DIST, talk.name),
+    output,
   ])
 }
 
